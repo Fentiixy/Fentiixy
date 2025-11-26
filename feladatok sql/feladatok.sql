@@ -1,14 +1,53 @@
 #1
-SELECT emberek.Nev, emberek.netto
-FROM emberek
-ORDER BY Nev;
+SELECT emberek.Nev, emberek.Netto
+FROM Emberek
+ORDER BY emberek.Nev;
 
 #2
-SELECT emberek.Nev, emberek.netto
-FROM emberek
-ORDER BY emberek.netto DESC
+SELECT emberek.Nev
+FROM Emberek
+ORDER BY emberek.Netto DESC;
 
 #3
-SELECT emberek.Nev, emberek.gyerekszam, emberek.netto
+SELECT emberek.Nev, emberek.Netto
+FROM Emberek
+ORDER BY emberek.GyerekSzam ASC;
+
+#4
+SELECT Emberek.Osztaly, emberek.Nev, emberek.Netto
+FROM Emberek
+ORDER BY emberek.Nev DESC, emberek.Netto ASC;
+
+#5
+SELECT Emberek.Nev, Emberek.GyerekSzam
+FROM Emberek
+ORDER BY Emberek.GyerekSzam DESC, Emberek.Nev ASC;
+
+#6
+SELECT Emberek.Nev, emberek.Beosztas, emberek.Osztaly, emberek.Netto
+FROM Emberek
+ORDER BY emberek.Beosztas DESC, emberek.Osztaly ASC, emberek.Netto ASC;
+
+#7
+SELECT emberek.Nev
 FROM emberek
-ORDER BY emberek.gyerekszam ASC;
+WHERE emberek.Beosztas = 'orvos'
+ORDER BY emberek.Nev ASC;
+
+#8
+SELECT *
+FROM emberek
+WHERE emberek.Beosztas = 'ápoló'
+  AND emberek.Nev LIKE '%Balázs';
+
+#9
+SELECT emberek.Nev, Emberek.GyerekSzam
+FROM emberek
+WHERE emberek.Nev LIKE 'F% Rita';
+
+#10
+SELECT Emberek.Nev, Emberek.Netto
+FROM Emberek
+WHERE Emberek.Nem = 'f'
+ORDER BY Emberek.Netto DESC;
+
