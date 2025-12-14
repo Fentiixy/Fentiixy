@@ -102,3 +102,32 @@ WHERE emberek.netto > 100000 OR emberek.netto < 40000
 SELECT emberek.nev, emberek.osztaly, emberek.gyerekszam
 FROM emberek
 WHERE emberek.gyerekszam < 2 OR emberek.osztaly = "sebészet"
+
+21.Feladat:
+SELECT emberek.nev, emberek.beosztas, emberek.osztaly, emberek.netto
+FROM emberek
+WHERE emberek.beosztas = "ápoló" AND emberek.netto > 39000
+   OR emberek.osztaly = "szülészet";
+
+22.Feladat:
+SELECT emberek.nev, emberek.beosztas
+FROM emberek
+WHERE emberek.nev LIKE "%Rita%" AND emberek.beosztas = "orvos"
+   OR emberek.beosztas = "karbantartó";
+
+
+23.Feladat:
+SELECT emberek.nev, emberek.beosztas, emberek.nem
+FROM emberek
+WHERE emberek.nem = "f"
+  AND emberek.beosztas = "orvos" OR emberek.beosztas = "ápoló";
+
+
+24.Feladat:
+SELECT SUM(emberek.netto) AS "Osszeg"
+FROM emberek;
+
+
+25.Feladat:
+SELECT AVG(emberek.netto) AS "Atlag"
+FROM emberek;
